@@ -1,0 +1,46 @@
+{
+  "name": "p-pharm",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/vue-fontawesome": "^2.0.2",
+    "@splidejs/vue-splide": "^0.3.5",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "datatables.net-bs4": "^1.10.23",
+    "fontawesome": "^5.6.3",
+    "jquery": "^3.5.1",
+    "popper": "^1.0.1",
+    "popper.js": "^1.16.1",
+    "v-tooltip": "^2.1.2",
+    "vue": "^2.6.11",
+    "vue-axios": "^3.2.4",
+    "vue-carousel": "^0.18.0",
+    "vue-carousel-3d": "^1.0.1",
+    "vue-cookies": "^1.7.4",
+    "vue-infinite-loading": "^2.4.5",
+    "vue-inner-image-zoom": "^1.0.1",
+    "vue-router": "^3.2.0",
+    "vue-toast-notification": "^0.6.1",
+    "vue-typed-js": "^0.1.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/test-utils": "^1.0.3",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
