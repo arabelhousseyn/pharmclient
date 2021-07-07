@@ -159,11 +159,16 @@ export default {
             this.tog = true
             var run = axios.post(this.link() + 'updatebyclient',this.data,this.cors())
             run.then((e)=>{
-               if(e.data == "yes")
+                if(e.status == 200)
+                {
+                    if(e.data == "yes")
                {
                    this.statu('Opèration effectuée','success')
                    this.tog = false
                }
+                }else{
+                    this.statu('Erreur dans server','error')
+                }
             })
             run.catch((e)=>{
                console.log('err')
@@ -187,7 +192,9 @@ export default {
             this.tog1 = true
             var tmp = axios.post(this.link() + 'changepass',this.change1,this.cors())
             tmp.then((e)=>{
-                if(e.data == "yes")
+                if(e.status == 200)
+                {
+                    if(e.data == "yes")
                 {
                    this.statu('Opèration effectuée','success') 
                     this.tog1 = false
@@ -197,6 +204,9 @@ export default {
                 {
                     this.statu('Ancien mot de passe incorrect','error')
                     this.tog1 = false
+                }
+                }else{
+                    this.statu('Erreur dans server','error')
                 }
             })
             tmp.catch((e)=>{

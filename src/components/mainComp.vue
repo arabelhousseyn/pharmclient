@@ -108,7 +108,12 @@ export default {
         window.document.title = "p-pharm"
         var run = axios.get(this.link() + 'categories',this.cors())
         run.then((e)=>{
-            this.categories = e.data
+            if(e.status == 200)
+            {
+                this.categories = e.data
+            }else{
+                this.statu('Erreur dans server','error')
+            }
         })
         run.catch((e)=>{
             console.log('err')
@@ -116,7 +121,12 @@ export default {
 
         var run1= axios.get(this.link() + 'catss',this.cors())
         run1.then(e=>{
-              this.cats = e.data
+            if(e.status == 200)
+            {
+                this.cats = e.data
+            }else{
+                this.statu('Erreur dans server','error')
+            }
         })
         run1.catch(e=>{
             console.log('err')

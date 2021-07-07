@@ -13,7 +13,7 @@ import common from './sharer/common'
 import './sharer/app'
 Vue.mixin(common)
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faSearch,faCheckCircle,faLock,faRecycle,faCartPlus,faPlus,faHome,faMinus,faBoxes,faArrowLeft,faBinoculars,faFilePdf,faTimes,faArrowRight,faListAlt,faExclamation,faClipboardCheck} from '@fortawesome/free-solid-svg-icons'
+import { faSearch,faCheckCircle,faLock,faRecycle,faCartPlus,faPlus,faHome,faMinus,faBoxes,faArrowLeft,faBinoculars,faFilePdf,faTimes,faArrowRight,faListAlt,faExclamation,faClipboardCheck,faEye} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import InfiniteLoading from 'vue-infinite-loading'
 library.add(faSearch)
@@ -33,6 +33,7 @@ library.add(faArrowRight)
 library.add(faListAlt)
 library.add(faExclamation)
 library.add(faClipboardCheck)
+library.add(faEye)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
 Vue.use(InfiniteLoading)

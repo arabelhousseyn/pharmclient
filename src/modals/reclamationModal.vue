@@ -54,8 +54,10 @@ export default {
         {
             this.dis = true
             this.send.id_commande = this.cmd.id_commande
-            var run = axios.post(this.link() + 'setreclamation',this.send)
+            var run = axios.post(this.link() + 'setreclamation',this.send,this.cors())
             run.then(e=>{
+              if(e.status == 200)
+              {
                 if(e.data == "yes")
                 {
                     this.statu('Opèration èffectuè','success')
@@ -66,6 +68,9 @@ export default {
                 location.reload()
             }, 2000);
                 }
+              }else{
+                this.statu('Erreur dans server','error')
+              }
             })
             run.catch(e=>{
                 console.log('err')
@@ -79,9 +84,14 @@ export default {
     },
     created()
     {
-      var run = axios.post(this.link() + 'feddbackbycommande', this.cmd)
+      var run = axios.post(this.link() + 'feddbackbycommande', this.cmd,this.cors())
       run.then(e=>{
-        this.details = e.data
+        if(e.status == 200)
+        {
+          this.details = e.data
+        }else{
+          this.statu('Erreur dans server','error')
+        }
       })
       run.catch(e=>{
         console.log('err')

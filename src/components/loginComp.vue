@@ -100,7 +100,9 @@ export default {
         this.tog = true
         var run = axios.post(this.link() + 'login',this.data,this.cors())
         run.then((e)=>{
-           if(e.data == "no")
+          if(e.status == 200)
+          {
+            if(e.data == "no")
            {
              this.statu('Le identificateur non valide','error')
              this.tog = false
@@ -119,8 +121,9 @@ export default {
              localStorage.setItem('clientID',e.data)
              window.location.reload();
            }
-
-           
+          }else{
+            this.statu('Erreur dans server','error')
+          }           
         })
         run.catch((e)=>{
           console.log('err')

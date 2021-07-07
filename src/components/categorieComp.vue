@@ -92,7 +92,7 @@
               <div  class="form-check">
      <input @change="upid"  :value="lot.id_lot"   class="form-check-input" type="checkbox"  id="defaultCheck1">
       <label class="form-check-label" for="defaultCheck1">
-      <p> <span>lot : {{lot.code_lot}} |</span> Prix :  <span style='color:green;'> {{lot.price}}.00 DA</span> | èxpiration : <span style='color:#f8aa49;'>{{lot.date_exp}}</span></p>
+      <p> <span>lot : {{lot.code_lot}} |</span> Prix :  <span style='color:green;'><money-format :value="parseInt(lot.price)" locale='fr' currency-code='DZD'></money-format></span> | èxpiration : <span style='color:#f8aa49;'>{{lot.date_exp}}</span></p>
      </label>
      </div>
      <div class="form-group">
@@ -132,7 +132,7 @@
 <script>
 import noresultComp from '../components/noresultComp'
 import axios from 'axios'
-
+import MoneyFormat from 'vue-money-format'
 export default {
     data : ()=>{
         return{
@@ -161,6 +161,7 @@ export default {
     },
     components : {
         noresultComp,
+        'money-format': MoneyFormat
         
     },
     methods : {

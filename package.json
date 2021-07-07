@@ -29,6 +29,7 @@
     "vue-cookies": "^1.7.4",
     "vue-infinite-loading": "^2.4.5",
     "vue-inner-image-zoom": "^1.0.1",
+    "vue-money-format": "^1.2.1",
     "vue-router": "^3.2.0",
     "vue-toast-notification": "^0.6.1",
     "vue-typed-js": "^0.1.2"

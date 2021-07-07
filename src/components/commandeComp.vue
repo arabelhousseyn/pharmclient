@@ -85,12 +85,17 @@ export default {
           {
             var run = axios.post(this.link() + 'commandereceive',{id : value.id_commande},this.cors())
             run.then(e=>{
-              if(e.data == "yes")
+              if(e.status == 200)
+              {
+                if(e.data == "yes")
               {
                 this.statu('Opèration èffectuè','success')
                 setTimeout(() => {
                   location.reload()
                 }, 1000);
+              }
+              }else{
+                this.statu('Erreur dans server','error')
               }
             })
           },
@@ -105,6 +110,8 @@ export default {
           {
               var deletee = axios.post(this.link() + 'deletecommandebyclient',{id : this.keyId},this.cors())
               deletee.then(e=>{
+                if(e.status == 200)
+                {
                   if(e.data == "yes")
                   {
                       var i = 0
@@ -118,6 +125,9 @@ export default {
                            i++;
                       }
                   }
+                }else{
+                  this.statu('Erreur dans server','error')
+                }
               })
               deletee.catch(e=>{
                   console.log('err')
@@ -128,8 +138,13 @@ export default {
     {
            var run = axios.post(this.link() + 'commandebyclient',{id : localStorage.getItem('clientID')},this.cors())
            run.then(e=>{
-                  this.commandes = e.data
+             if(e.status == 200)
+             {
+               this.commandes = e.data
                    this.table()
+             }else{
+               this.statu('Erreur dans server','error')
+             }
            })
            run.catch(e=>{
                console.log('err')

@@ -50,13 +50,13 @@ export default {
                 Authorization : "Bearer 1|XP9kLs2cwy2te78Q2nDuNSgBGdoPs6ldZiDlVKXY",
             }
             return {headers}
-        },
+        }, // auth 
         hideModal()
         {
             document.getElementById('cstt').removeAttribute('class')
             document.getElementById('cstt').style.display = "none"
             document.querySelector('.modal-backdrop').removeAttribute('class')
-        }
+        } // hide modal
     }
     
 }

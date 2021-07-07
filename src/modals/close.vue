@@ -33,12 +33,17 @@ export default {
     methods : {
        close()
           {
-            var run = axios.post('http://localhost/ker/learn%20php/p-pharm/api/restrict',this.data)
+            var run = axios.post('http://localhost/ker/learn%20php/p-pharm/api/restrict',this.data,this.cors())
             run.then((e)=>{
-              if(e.data == "yes")
+              if(e.status == 200)
+              {
+                if(e.data == "yes")
               {
                 localStorage.clear()
                 window.location.href = "/"
+              }
+              }else{
+                this.statu('Erreur dans server','error')
               }
             })
           }
